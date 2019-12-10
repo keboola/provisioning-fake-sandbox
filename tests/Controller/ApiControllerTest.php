@@ -44,11 +44,11 @@ class ApiControllerTest extends WebTestCase
         self::assertEquals(
             [
                 'files',
-                'files\dummy',
-                'files\dummy.manifest',
+                'files/dummy',
+                'files/dummy.manifest',
                 'tables',
-                'tables\source.csv',
-                'tables\source.csv.manifest',
+                'tables/source.csv',
+                'tables/source.csv.manifest',
             ],
             $response
         );

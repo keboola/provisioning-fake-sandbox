@@ -3,11 +3,11 @@ version: "3"
 # for development purposes only
 services:
   test-server:
+    build: .
     tty: true
     stdin_open: true
     ports:
       - "81:80"
     volumes:
-      - /tmp/:/tmp/
-      - /var/run/docker.sock:/var/run/docker.sock
+      - ./tests/data:/data/
       - .:/code/

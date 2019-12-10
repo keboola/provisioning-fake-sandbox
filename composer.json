@@ -59,7 +59,7 @@
             "@auto-scripts"
         ],
 
-        "tests": "phpunit --coverage-clover ./build/logs/clover.xml",
+        "tests": "phpunit",
         "phpstan": "phpstan analyse ./src ./tests --level=max --no-progress -c phpstan.neon",
         "phpcs": "phpcs -n --ignore=vendor,cache,Kernel.php,bootstrap.php --extensions=php .",
         "phpcbf": "phpcbf -n --ignore=vendor,cache,Kernel.php,bootstrap.php --extensions=php .",

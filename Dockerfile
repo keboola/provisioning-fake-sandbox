@@ -44,5 +44,5 @@ COPY . /code/
 # run normal composer - all deps are cached already
 RUN composer install $COMPOSER_FLAGS 
 
-ENTRYPOINT ["/code/docker/entrypoint.sh"]
+ENTRYPOINT []
 CMD ["apache2-foreground"]

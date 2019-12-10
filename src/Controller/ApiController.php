@@ -31,7 +31,7 @@ class ApiController extends AbstractController
         $files = [];
         foreach ($finder as $file) {
             $this->logger->info(sprintf('Listing file "%s".', $file->getPathname()));
-            $files[] = $file->getRelativePathname();
+            $files[] = str_replace('\\', '/', $file->getRelativePathname());
         }
         return $this->json($files);
     }
