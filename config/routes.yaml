@@ -11,3 +11,10 @@ copy:
   methods: [GET]
   defaults:
     _format: json
+
+index:
+  path: /
+  controller: Keboola\FakeSandbox\Controller\ApiController::index
+  methods: [GET]
+  defaults:
+    _format: json

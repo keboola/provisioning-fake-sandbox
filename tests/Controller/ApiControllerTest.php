@@ -53,4 +53,16 @@ class ApiControllerTest extends WebTestCase
             $response
         );
     }
+
+    public function testIndex(): void
+    {
+        $client = static::createClient([], []);
+        $client->request('GET', '/', [], [], []);
+        self::assertEquals(200, $client->getResponse()->getStatusCode(), (string) $client->getResponse()->getContent());
+        $response = json_decode((string) $client->getResponse()->getContent(), true);
+        self::assertEquals(
+            ['message' => 'All your base are belong to us'],
+            $response
+        );
+    }
 }

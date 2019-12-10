@@ -24,6 +24,11 @@ class ApiController extends AbstractController
         $this->dataDir = $dataDir;
     }
 
+    public function index(): JsonResponse
+    {
+        return $this->json(['message' => 'All your base are belong to us']);
+    }
+
     public function list(): JsonResponse
     {
         $finder = new Finder();
