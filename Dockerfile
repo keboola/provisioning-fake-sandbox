@@ -36,7 +36,8 @@ COPY docker/php-prod.ini /usr/local/etc/php/php.ini
 RUN a2enmod rewrite \	
 	&& a2dissite 000-default \ 
 	&& a2ensite sync-api \ 
-	&& pecl config-set php_ini /usr/local/etc/php.ini
+	&& pecl config-set php_ini /usr/local/etc/php.ini \
+    && chown -R www-data /code/var
 
 # copy rest of the app
 COPY . /code/
