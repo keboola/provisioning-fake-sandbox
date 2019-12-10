@@ -41,7 +41,8 @@ RUN a2enmod rewrite \
 # copy rest of the app
 COPY . /code/
 
-RUN chown -R www-data /code/var
+RUN mkdir /code/var \
+    && chown -R www-data /code/var
 
 # run normal composer - all deps are cached already
 RUN composer install $COMPOSER_FLAGS 
