@@ -32,7 +32,7 @@ class ApiController extends AbstractController
     public function list(): JsonResponse
     {
         $finder = new Finder();
-        $finder->in($this->dataDir . '/in/')->sortByName();
+        $finder->in($this->dataDir)->sortByName();
         $files = [];
         foreach ($finder as $file) {
             $this->logger->info(sprintf('Listing file "%s".', $file->getPathname()));

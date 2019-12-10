@@ -43,12 +43,16 @@ class ApiControllerTest extends WebTestCase
         $response = json_decode((string) $client->getResponse()->getContent(), true);
         self::assertEquals(
             [
-                'files',
-                'files/dummy',
-                'files/dummy.manifest',
-                'tables',
-                'tables/source.csv',
-                'tables/source.csv.manifest',
+                'in',
+                'in/files',
+                'in/files/dummy',
+                'in/files/dummy.manifest',
+                'in/tables',
+                'in/tables/source.csv',
+                'in/tables/source.csv.manifest',
+                'out',
+                'out/files',
+                'out/tables',
             ],
             $response
         );
