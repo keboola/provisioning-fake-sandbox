@@ -1,0 +1,26 @@
+sudo: required
+
+language: bash
+
+services:
+  - docker
+
+before_script:
+  - export APP_IMAGE=provisioning-fake-sandbox
+  - docker -v
+  - docker build -t $APP_IMAGE .
+
+script:
+  - docker run $APP_IMAGE composer ci
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: ./deploy.sh
+  on:
+    tags: true
+
+notifications:
+  slack:
+    secure: THqaJsppDwV41un9D9aenERYLdtyHOZAwKb0oF9mqDAvZJb2kiHWDkOQRIfjAjzyboTR/VdAfifppvJq8ZGJkXBA1haBuO0p40rCmt1Y38DH1EdjEFFmjlFMJjSdUGuNaC0anCPfbHuKsJbizQoNBLdPLmn6+u3P6uowFk1M4/UqJCfCbeJPrthH18muu+i3tCXpNQDt814bFIlPih+6kcm8wkVXqYCSw8y9O78jgKuHM1IXdjcZxMhCiLyASligawwJTJz03MyTMW5mtCOhA1RWHEb+TdsVUkUvc8mQ2iOGXWBvlE5QaTbBe6NcIT0f93luanIWBHi8c8S4r8bH8lyAoDjZ030w96Mkd+7c0X6D4UWuSHx3CZYXph1e80FjCZuYOTmjngh6xF8QSTx7XVsy55KxUPnJL386FuZB6sSHNqtn7Ys3+/hxdM27Dnr2fbH/8tDlmivOHVwVhTwzxP3HJ6LBY1QyKvoIiIPanlaokhEQ33gZg6RmJKSEHvKNNEb6df3hgh2WGUaA1A3tM1Q5F+2846vPtxdzuSndtSoaU06TUB5+wonSkE8hpIbyZkDiywCv3svM9ukmUL8GgYwiiCMq2HB3N+CcWNDDd76dgtzE50sozR3vyNYROwgh9etDuH6kQ/GD1yfS5XxBy9haS+2VIHSzB6GD7Q2w4VU=
+  email: false
