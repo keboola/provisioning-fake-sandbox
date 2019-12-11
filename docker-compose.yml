@@ -1,0 +1,13 @@
+version: "3"
+
+# for development purposes only
+services:
+  test-server:
+    build: .
+    tty: true
+    stdin_open: true
+    ports:
+      - "81:80"
+    volumes:
+      - ./tests/data:/data/
+      - .:/code/

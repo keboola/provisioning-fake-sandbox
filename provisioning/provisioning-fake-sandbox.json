@@ -1,0 +1,80 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Stack for Fake Sandbox deployment",
+    "Parameters": {
+        "EcrRepositoryName": {
+            "Type": "String",
+            "Description": "ECR repository name",
+            "Default": "keboola/provisioning-fake-sandbox"
+        }
+    },
+    "Resources": {
+        "EcrRepository": {
+            "Type": "AWS::ECR::Repository",
+            "Properties": {
+                "RepositoryName": {
+                    "Ref": "EcrRepositoryName"
+                }
+            }
+        },        
+        "DeployUser": {
+            "Type": "AWS::IAM::User",
+            "DeletionPolicy": "Delete",
+            "Properties": {
+                "Path": "/",
+                "Policies": [
+                    {
+                        "PolicyName": "Owner",
+                        "PolicyDocument": {
+                            "Statement": [
+                                {
+                                    "Effect": "Allow",
+                                    "Action": [
+                                        "ecr:GetAuthorizationToken"
+                                    ],
+                                    "Resource": "*"
+                                },
+                                {
+                                    "Effect": "Allow",
+                                    "Action": [
+                                        "ecr:PutImage",
+                                        "ecr:CompleteLayerUpload",
+                                        "ecr:InitiateLayerUpload",
+                                        "ecr:UploadLayerPart",
+                                        "ecr:BatchCheckLayerAvailability",
+                                        "ecr:BatchGetImage",
+                                        "ecr:GetDownloadUrlForLayer"
+                                    ],
+                                    "Resource": [{
+                                        "Fn::GetAtt": [
+                                            "EcrRepository",
+                                            "Arn"
+                                        ]
+                                    }]
+                                }                   
+                            ]
+                        }
+                    }
+                ]
+            },
+            "DependsOn": ["EcrRepository"]
+        }
+    },
+    "Outputs": {
+        "Region": {
+            "Value": {
+                "Ref": "AWS::Region"
+            }
+        },
+        "DeployUser": {
+            "Value": {
+                "Ref": "DeployUser"
+            }
+        },
+        "Repository": {
+            "Value": {
+                "Ref": "EcrRepository"
+            }
+        }
+    }
+}

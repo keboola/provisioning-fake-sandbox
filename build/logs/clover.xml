@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1575980380">
+  <project timestamp="1575980380">
+    <package name="Keboola\FakeSandbox\Controller">
+      <file name="D:\OneDrive\Work\provisioning-fake-sandbox\src\Controller\ApiController.php">
+        <class name="Keboola\FakeSandbox\Controller\ApiController" namespace="Keboola\FakeSandbox\Controller">
+          <metrics complexity="5" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="23" coveredelements="23"/>
+        </class>
+        <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="23" type="stmt" count="2"/>
+        <line num="24" type="stmt" count="2"/>
+        <line num="25" type="stmt" count="2"/>
+        <line num="27" type="method" name="list" visibility="public" complexity="2" crap="2" count="1"/>
+        <line num="29" type="stmt" count="1"/>
+        <line num="30" type="stmt" count="1"/>
+        <line num="31" type="stmt" count="1"/>
+        <line num="32" type="stmt" count="1"/>
+        <line num="33" type="stmt" count="1"/>
+        <line num="34" type="stmt" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="39" type="method" name="copy" visibility="public" complexity="2" crap="2" count="1"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="43" type="stmt" count="1"/>
+        <line num="44" type="stmt" count="1"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="47" type="stmt" count="1"/>
+        <line num="48" type="stmt" count="1"/>
+        <line num="49" type="stmt" count="1"/>
+        <line num="51" type="stmt" count="1"/>
+        <metrics loc="53" ncloc="51" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="23" coveredelements="23"/>
+      </file>
+    </package>
+    <package name="Keboola\FakeSandbox">
+      <file name="D:\OneDrive\Work\provisioning-fake-sandbox\src\Kernel.php">
+        <class name="Keboola\FakeSandbox\Kernel" namespace="Keboola\FakeSandbox">
+          <metrics complexity="7" methods="4" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="6" elements="24" coveredelements="8"/>
+        </class>
+        <line num="18" type="method" name="registerBundles" visibility="public" complexity="3" crap="3" count="2"/>
+        <line num="20" type="stmt" count="2"/>
+        <line num="21" type="stmt" count="2"/>
+        <line num="22" type="stmt" count="2"/>
+        <line num="23" type="stmt" count="2"/>
+        <line num="26" type="stmt" count="2"/>
+        <line num="28" type="method" name="getProjectDir" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="30" type="stmt" count="2"/>
+        <line num="33" type="method" name="configureContainer" visibility="protected" complexity="2" crap="6" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <line num="41" type="stmt" count="0"/>
+        <line num="42" type="stmt" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="46" type="method" name="configureRoutes" visibility="protected" complexity="1" crap="2" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="50" type="stmt" count="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <line num="52" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="0"/>
+        <metrics loc="54" ncloc="54" classes="1" methods="4" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="6" elements="24" coveredelements="8"/>
+      </file>
+    </package>
+    <metrics files="2" loc="107" ncloc="105" classes="2" methods="7" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="40" coveredstatements="26" elements="47" coveredelements="31"/>
+  </project>
+</coverage>

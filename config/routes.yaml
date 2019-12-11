@@ -1,0 +1,20 @@
+list:
+  path: /list
+  controller: Keboola\FakeSandbox\Controller\ApiController::list
+  methods: [GET]
+  defaults:
+    _format: json
+
+copy:
+  path: /copy
+  controller: Keboola\FakeSandbox\Controller\ApiController::copy
+  methods: [GET]
+  defaults:
+    _format: json
+
+index:
+  path: /
+  controller: Keboola\FakeSandbox\Controller\ApiController::index
+  methods: [GET]
+  defaults:
+    _format: json
