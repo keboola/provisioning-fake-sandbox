@@ -30,7 +30,10 @@ WORKDIR /code/
 RUN composer install $COMPOSER_FLAGS --no-scripts --no-autoloader
 
 COPY docker/sync-api.conf /etc/apache2/sites-available/
+COPY docker/ports.conf /etc/apache2/ports.conf
 COPY docker/php-prod.ini /usr/local/etc/php/php.ini
+
+EXPOSE 8080
 
 # configure apache & php
 RUN a2enmod rewrite \	
