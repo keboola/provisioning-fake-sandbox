@@ -12,6 +12,7 @@ before_script:
 
 script:
   - docker run $APP_IMAGE composer ci
+  - ./push-image-azure.sh
 
 deploy:
   provider: script
