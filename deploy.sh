@@ -7,3 +7,5 @@ docker tag keboola/provisioning-fake-sandbox:latest 061240556736.dkr.ecr.us-east
 docker tag keboola/provisioning-fake-sandbox:latest 061240556736.dkr.ecr.us-east-1.amazonaws.com/keboola/provisioning-fake-sandbox:latest
 docker push 061240556736.dkr.ecr.us-east-1.amazonaws.com/keboola/provisioning-fake-sandbox:${TRAVIS_TAG}
 docker push 061240556736.dkr.ecr.us-east-1.amazonaws.com/keboola/provisioning-fake-sandbox:latest
+
+./push-image-azure.sh
