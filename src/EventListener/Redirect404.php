@@ -1,13 +1,12 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Keboola\FakeSandbox\EventListener;
 
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\Routing\RouterInterface;
 
 class Redirect404
@@ -22,7 +21,7 @@ class Redirect404
         $this->router = $router;
     }
 
-    public function onKernelException(ExceptionEvent $event)
+    public function onKernelException(ExceptionEvent $event): void
     {
         // If not a HttpNotFoundException ignore
         if (!$event->getThrowable() instanceof NotFoundHttpException) {
