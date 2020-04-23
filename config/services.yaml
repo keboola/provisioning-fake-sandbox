@@ -21,3 +21,10 @@ services:
     Keboola\FakeSandbox\Controller\ApiController:
         arguments:
             $dataDir: '%env(data_dir)%'
+
+    app.listener.redirect_404_to_homepage:
+        class: Keboola\FakeSandbox\EventListener\Redirect404
+        arguments:
+            - "@router"
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
