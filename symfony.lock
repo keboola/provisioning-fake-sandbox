@@ -5,6 +5,9 @@
     "jakub-onderka/php-parallel-lint": {
         "version": "v1.0.0"
     },
+    "keboola/coding-standard": {
+        "version": "9.0.0"
+    },
     "keboola/php-temp": {
         "version": "2.0.1"
     },
@@ -118,6 +121,18 @@
     },
     "sebastian/version": {
         "version": "2.0.1"
+    },
+    "slevomat/coding-standard": {
+        "version": "4.8.7"
+    },
+    "squizlabs/php_codesniffer": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "0dc9cceda799fd3a08b96987e176a261028a3709"
+        }
     },
     "symfony/browser-kit": {
         "version": "v5.0.1"
