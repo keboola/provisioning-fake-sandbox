@@ -12,6 +12,11 @@ copy:
   defaults:
     _format: json
 
+getFile:
+  path: /getNotebookFile
+  controller: Keboola\FakeSandbox\Controller\ApiController::getNotebookFile
+  methods: [GET]
+
 index:
   path: /
   controller: Keboola\FakeSandbox\Controller\ApiController::index

@@ -8,6 +8,7 @@ use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 class ApiController extends AbstractController
@@ -54,5 +55,10 @@ class ApiController extends AbstractController
             $fs->copy($sourceFile->getPathname(), $this->dataDir . '/' . $target);
         }
         return $this->json($files);
+    }
+
+    public function getNotebookFile(): BinaryFileResponse
+    {
+        return new BinaryFileResponse($this->dataDir . '/notebook.ipynb');
     }
 }
