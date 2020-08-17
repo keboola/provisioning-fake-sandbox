@@ -50,6 +50,7 @@ class ApiControllerTest extends WebTestCase
                 'in/tables',
                 'in/tables/source.csv',
                 'in/tables/source.csv.manifest',
+                'notebook.ipynb',
                 'out',
                 'out/files',
                 'out/tables',
@@ -68,5 +69,17 @@ class ApiControllerTest extends WebTestCase
             ['message' => 'All your base are belong to us'],
             $response
         );
+    }
+
+    public function testGetNotebookFile(): void
+    {
+        $client = static::createClient([], []);
+        ob_start();
+        $client->request('GET', '/getNotebookFile', [], [], []);
+        self::assertEquals(200, $client->getResponse()->getStatusCode(), (string) $client->getResponse()->getContent());
+        $response = $client->getResponse()->sendContent();
+        $fileContents = ob_get_contents();
+        ob_end_clean();
+        self::assertEquals(file_get_contents(__DIR__ . '/../data/notebook.ipynb'), $fileContents);
     }
 }
