@@ -46,7 +46,7 @@ class ApiController extends AbstractController
     {
         $fs = new Filesystem();
         $finder = new Finder();
-        $finder->files()->notName('*.manifest')->in($this->dataDir . '/in/')->sortByName();
+        $finder->files()->in($this->dataDir . '/in/')->sortByName();
         $files = [];
         foreach ($finder as $sourceFile) {
             $this->logger->info(sprintf('Copying file "%s".', $sourceFile->getPathname()));
