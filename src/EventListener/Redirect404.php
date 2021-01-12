@@ -23,17 +23,7 @@ class Redirect404
 
     public function onKernelException(ExceptionEvent $event): void
     {
-        echo "Exception " . $event->getThrowable()->getMessage();
+        echo 'Exception: ' . $event->getThrowable()->getMessage();
         return;
-        // If not a HttpNotFoundException ignore
-        if (!$event->getThrowable() instanceof NotFoundHttpException) {
-            return;
-        }
-
-        // Create redirect response with url for the home page
-        $response = new RedirectResponse($this->router->generate('index'));
-
-        // Set the response to be processed
-        $event->setResponse($response);
     }
 }
