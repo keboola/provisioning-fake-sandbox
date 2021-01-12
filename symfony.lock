@@ -17,9 +17,6 @@
     "myclabs/deep-copy": {
         "version": "1.9.3"
     },
-    "nikic/php-parser": {
-        "version": "v4.3.0"
-    },
     "phar-io/manifest": {
         "version": "1.0.3"
     },
@@ -264,11 +261,17 @@
     "symfony/polyfill-intl-idn": {
         "version": "v1.13.1"
     },
+    "symfony/polyfill-intl-normalizer": {
+        "version": "v1.22.0"
+    },
     "symfony/polyfill-mbstring": {
         "version": "v1.13.1"
     },
     "symfony/polyfill-php73": {
         "version": "v1.13.1"
+    },
+    "symfony/polyfill-php80": {
+        "version": "v1.22.0"
     },
     "symfony/routing": {
         "version": "4.2",
