@@ -66,7 +66,6 @@
         "phplint": "parallel-lint -j 10 --exclude vendor --exclude cache --exclude Kernel.php --exclude bootstrap.php .",
         "build": [
             "@phplint",
-            "@phpcs",
             "@tests"
         ],
         "ci": [
