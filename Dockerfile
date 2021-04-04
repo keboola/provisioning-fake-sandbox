@@ -36,10 +36,10 @@ COPY docker/php-prod.ini /usr/local/etc/php/php.ini
 EXPOSE 8080
 
 # configure apache & php
-RUN a2enmod rewrite \	
-	&& a2dissite 000-default \ 
-	&& a2ensite sync-api \ 
-	&& pecl config-set php_ini /usr/local/etc/php.ini    
+RUN a2enmod rewrite \
+	&& a2dissite 000-default \
+	&& a2ensite sync-api \
+	&& pecl config-set php_ini /usr/local/etc/php.ini
 
 # copy rest of the app
 COPY . /code/
@@ -48,7 +48,7 @@ RUN mkdir /code/var \
     && chown -R www-data /code/var
 
 # run normal composer - all deps are cached already
-RUN composer install $COMPOSER_FLAGS 
+RUN composer install $COMPOSER_FLAGS
 
 ENTRYPOINT []
 CMD ["apache2-foreground"]
