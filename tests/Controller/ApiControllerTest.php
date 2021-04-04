@@ -45,6 +45,8 @@ class ApiControllerTest extends WebTestCase
         $response = json_decode((string) $client->getResponse()->getContent(), true);
         self::assertEquals(
             [
+                '.git-test',
+                '.git-test/file.txt',
                 'in',
                 'in/files',
                 'in/files/dummy',
@@ -55,7 +57,9 @@ class ApiControllerTest extends WebTestCase
                 'notebook.ipynb',
                 'out',
                 'out/files',
+                'out/files/.gitkeep',
                 'out/tables',
+                'out/tables/.gitkeep',
             ],
             $response
         );
