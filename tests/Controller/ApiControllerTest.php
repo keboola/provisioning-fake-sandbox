@@ -38,15 +38,20 @@ class ApiControllerTest extends WebTestCase
 
     public function testList(): void
     {
-        putenv('data_dir=' . __DIR__ . '/../data/');
+        $temp = new Temp();
+        putenv('data_dir=' . $temp->getTmpFolder());
+        $fs = new Filesystem();
+        $fs->mirror(__DIR__ . '/../data/', $temp->getTmpFolder());
+        $fs->mkdir($temp->getTmpFolder() . '/.git');
+        file_put_contents($temp->getTmpFolder() . '/.git/file.txt', 'test');
         $client = static::createClient([], []);
         $client->request('GET', '/list', [], [], []);
         self::assertEquals(200, $client->getResponse()->getStatusCode(), (string) $client->getResponse()->getContent());
         $response = json_decode((string) $client->getResponse()->getContent(), true);
         self::assertEquals(
             [
-                '.git-test',
-                '.git-test/file.txt',
+                '.git',
+                '.git/file.txt',
                 'in',
                 'in/files',
                 'in/files/dummy',
