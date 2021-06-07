@@ -28,9 +28,7 @@ class ApiControllerTest extends WebTestCase
         self::assertEquals(
             [
                 '/out/files/dummy',
-                '/out/files/dummy.manifest',
                 '/out/tables/source.csv',
-                '/out/tables/source.csv.manifest',
             ],
             $response
         );
