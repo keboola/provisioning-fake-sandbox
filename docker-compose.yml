@@ -7,7 +7,7 @@ services:
     tty: true
     stdin_open: true
     ports:
-      - "8080:8080"
+      - "8888:8888"
     volumes:
       - ./tests/data:/data/
       - .:/code/
