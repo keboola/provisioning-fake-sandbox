@@ -23,7 +23,7 @@ ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
 # Composer - deps always cached unless changed - First copy only composer files
-COPY composer.* /code/
+COPY composer.* symfony.lock /code/
 
 # Download dependencies, but don't run scripts or init autoloaders as the app is missing
 WORKDIR /code/
